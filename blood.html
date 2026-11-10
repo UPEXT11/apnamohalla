@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Blood Donor Finder — ApnaMohalla</title>
+  <meta name="description" content="Find verified blood donors by blood group and city on ApnaMohalla." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="css/styles.css" />
+</head>
+<body>
+  <div class="topbar"><span>🇮🇳 Made in India · For every mohalla, for every neighbour</span></div>
+
+  <header class="navbar">
+    <a href="dashboard.html" class="brand">
+      <span class="brand-mark">🏘️</span>
+      <span class="brand-text">Apna<span>Mohalla</span></span>
+    </a>
+    <div class="nav-actions">
+      <a href="profile.html" class="btn btn-ghost btn-sm" data-i18n="nav.profile">Profile</a>
+      <span class="user-chip" id="userChip" hidden></span>
+      <button class="btn btn-ghost btn-sm" id="logoutBtn" hidden data-i18n="nav.logout">Logout</button>
+    </div>
+  </header>
+
+  <section class="section">
+    <div class="section-head">
+      <span class="section-kicker">🩸</span>
+      <h2 data-i18n="blood.title">Blood Donor Finder</h2>
+      <p data-i18n="blood.sub">Search verified donors by blood group and city. One match can save a life.</p>
+    </div>
+
+    <div class="panel">
+      <div class="finder-bar">
+        <select id="bloodGroup" aria-label="Blood group">
+          <option value="">Any blood group</option>
+          <option>A+</option><option>A-</option>
+          <option>B+</option><option>B-</option>
+          <option>AB+</option><option>AB-</option>
+          <option>O+</option><option>O-</option>
+        </select>
+        <input type="text" id="donorCity" data-i18n-placeholder="blood.city" placeholder="City" />
+        <button class="btn btn-primary" id="searchBtn" data-i18n="blood.search">Search Donors</button>
+      </div>
+      <div class="results-grid" id="donorResults"></div>
+      <div class="empty-state" id="donorEmpty" hidden data-i18n="blood.noResults">No donors found for this search. Be the first to register!</div>
+    </div>
+
+    <div class="panel panel-alt">
+      <h3 data-i18n="blood.registerTitle">Become a donor</h3>
+      <p data-i18n="blood.registerSub">Register yourself so you can help save a life.</p>
+      <form class="form-grid" id="donorForm">
+        <input name="name" data-i18n-placeholder="blood.name" placeholder="Full name" required />
+        <select name="blood_group" required>
+          <option value="">Blood group</option>
+          <option>A+</option><option>A-</option><option>B+</option><option>B-</option>
+          <option>AB+</option><option>AB-</option><option>O+</option><option>O-</option>
+        </select>
+        <input name="city" data-i18n-placeholder="blood.city" placeholder="City" required />
+        <input name="phone" type="tel" data-i18n-placeholder="blood.phone" placeholder="WhatsApp number" required />
+        <button type="submit" class="btn btn-primary" data-i18n="blood.register">Register as Donor</button>
+      </form>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <div class="brand brand-light">
+      <span class="brand-mark">🏘️</span>
+      <span class="brand-text">Apna<span>Mohalla</span></span>
+    </div>
+    <p>Made with ❤️ in India · Helping neighbours, saving lives.</p>
+    <p class="footer-small">© <span id="year"></span> ApnaMohalla</p>
+  </footer>
+
+  <script src="js/i18n.js"></script>
+  <script src="js/fab.js"></script>
+  <script src="js/auth.js"></script>
+  <script src="js/blood.js"></script>
+</body>
+</html>

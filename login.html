@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Log In — ApnaMohalla</title>
+  <meta name="description" content="Log in to ApnaMohalla and help your neighbourhood." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="css/styles.css" />
+</head>
+<body>
+  <div class="auth-wrap">
+    <div class="auth-card">
+      <a href="index.html" class="auth-back" data-i18n="common.back">← Back to home</a>
+      <div class="auth-head">
+        <div class="auth-icon">🏘️</div>
+        <h2 data-i18n="auth.welcome">Welcome back!</h2>
+        <p data-i18n="auth.loginSub">Log in to help your mohalla.</p>
+      </div>
+      <form class="auth-form" id="loginForm">
+        <input type="email" name="email" data-i18n-placeholder="auth.email" placeholder="Email address" required />
+        <input type="password" name="password" data-i18n-placeholder="auth.password" placeholder="Password" required />
+        <button type="submit" class="btn btn-primary" data-i18n="auth.login">Log In</button>
+      </form>
+      <p class="auth-switch"><span data-i18n="auth.noAccount">Don't have an account?</span> <a href="signup.html" data-i18n="auth.signupLink">Sign up free</a></p>
+    </div>
+  </div>
+  <script src="js/i18n.js"></script>
+  <script src="js/fab.js"></script>
+  <script src="js/auth.js"></script>
+  <script src="js/auth-pages.js"></script>
+</body>
+</html>

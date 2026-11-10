@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Dashboard — ApnaMohalla</title>
+  <meta name="description" content="ApnaMohalla dashboard — help your neighbourhood." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="css/styles.css" />
+</head>
+<body>
+
+  <div class="topbar">
+    <span>🇮🇳 Made in India · For every mohalla, for every neighbour</span>
+  </div>
+
+  <header class="navbar">
+    <a href="index.html" class="brand">
+      <span class="brand-mark">🏘️</span>
+      <span class="brand-text">Apna<span>Mohalla</span></span>
+    </a>
+    <div class="nav-actions">
+      <a href="profile.html" class="btn btn-ghost btn-sm" id="profileBtn" data-i18n="nav.profile" hidden>Profile</a>
+      <span class="user-chip" id="userChip" hidden></span>
+      <a href="login.html" class="btn btn-primary btn-sm" id="signinBtn" data-i18n="nav.signin">Sign In</a>
+      <button class="btn btn-ghost btn-sm" id="logoutBtn" data-i18n="nav.logout" hidden>Logout</button>
+    </div>
+  </header>
+
+  <section class="dash-hero">
+    <h1>Namaste, <span id="userName">neighbour</span>! 🙏</h1>
+    <p data-i18n="dash.pick">What can your mohalla help with today?</p>
+  </section>
+
+  <section class="section">
+    <div class="section-head">
+      <span class="section-kicker">🧰 <span data-i18n="dash.tools">Your tools</span></span>
+      <h2 data-i18n="dash.pickService">Pick a service</h2>
+      <p id="gateNote" data-i18n="dash.gateSignin">Sign in to unlock everything.</p>
+    </div>
+
+    <div class="services-grid" id="cardsGrid"></div>
+
+    <div class="auth-cta" id="authCta">
+      <div class="cta-banner">
+        <h2 data-i18n="dash.ctaTitle">One step to help your mohalla.</h2>
+        <p data-i18n="dash.ctaSub">Create a free account to access blood donors, lost &amp; found, and more.</p>
+        <div class="cta-actions">
+          <a href="signup.html" class="btn btn-white" data-i18n="dash.signupFree">Sign Up Free</a>
+          <a href="login.html" class="btn btn-outline" data-i18n="dash.login">Log In</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <div class="brand brand-light">
+      <span class="brand-mark">🏘️</span>
+      <span class="brand-text">Apna<span>Mohalla</span></span>
+    </div>
+    <p>Made with ❤️ in India · Helping neighbours, saving lives.</p>
+    <p class="footer-small">© <span id="year"></span> ApnaMohalla</p>
+  </footer>
+
+  <script src="js/i18n.js"></script>
+  <script src="js/fab.js"></script>
+  <script src="js/auth.js"></script>
+  <script src="js/dashboard.js"></script>
+</body>
+</html>

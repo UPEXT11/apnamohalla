@@ -1,0 +1,1 @@
+# ApnaMohalla uses only Python's standard library — no external dependencies.

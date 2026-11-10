@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>ApnaMohalla — Aapke Mohalle Ka Madadgaar | Help Your Neighbourhood</title>
+  <meta name="description" content="ApnaMohalla is India's hyperlocal help platform — find blood donors, reunite lost items, discover trusted local services and reach emergency help, all in your own mohalla." />
+  <meta property="og:title" content="ApnaMohalla — Help your neighbourhood" />
+  <meta property="og:description" content="Blood donors, lost & found, local services and emergency help — all in your own mohalla. 🇮🇳" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="css/styles.css" />
+</head>
+<body>
+
+  <!-- ===== Top bar ===== -->
+  <div class="topbar">
+    <span>🇮🇳 Made in India · For every mohalla, for every neighbour</span>
+  </div>
+
+  <!-- ===== Navbar ===== -->
+  <header class="navbar">
+    <a href="#home" class="brand">
+      <span class="brand-mark">🏘️</span>
+      <span class="brand-text">Apna<span>Mohalla</span></span>
+    </a>
+    <nav class="nav-links" id="navLinks">
+      <a href="#about" data-i18n="nav.about">About</a>
+      <a href="#features" data-i18n="nav.features">Features</a>
+      <a href="#how" data-i18n="nav.how">How it works</a>
+      <a href="#contact" data-i18n="nav.contact">Contact</a>
+    </nav>
+    <div class="nav-actions">
+      <a href="loader.html" class="btn btn-primary btn-sm" data-i18n="nav.getstarted">Get Started</a>
+      <button class="nav-toggle" id="navToggle" aria-label="Menu">☰</button>
+    </div>
+  </header>
+
+  <!-- ===== Hero ===== -->
+  <section class="hero" id="home">
+    <div class="hero-inner">
+      <span class="hero-badge">✨ <span data-i18n="hero.badge">Made for India</span></span>
+      <h1 data-i18n-html="hero.title">Help starts right in your <em>mohalla</em>.</h1>
+      <p class="hero-sub" data-i18n="hero.sub">
+        ApnaMohalla is India's hyperlocal help platform — find blood donors,
+        reunite lost items, discover trusted local services and reach emergency help.
+      </p>
+
+      <div class="hero-actions">
+        <a href="loader.html" class="btn btn-primary" data-i18n="nav.getstarted">Get Started</a>
+        <a href="#about" class="btn btn-ghost" data-i18n="common.learnmore">Learn More</a>
+      </div>
+
+      <div class="hero-stats">
+        <div class="stat"><strong>1,24,000+</strong><span>Donors ready</span></div>
+        <div class="stat"><strong>850+</strong><span>Cities covered</span></div>
+        <div class="stat"><strong>48,000+</strong><span>People helped</span></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== About ===== -->
+  <section class="section" id="about">
+    <div class="section-head">
+      <span class="section-kicker">🏘️ Our mission</span>
+      <h2>What is ApnaMohalla?</h2>
+    </div>
+    <div class="about-wrap">
+      <div class="about-copy">
+        <h3>Help is closer than you think.</h3>
+        <p>
+          In India, help usually travels through chaotic WhatsApp forwards and word of mouth.
+          ApnaMohalla brings it all into one trusted, hyperlocal place — so the person who
+          needs help and the neighbour who can give it actually find each other, fast.
+        </p>
+        <p>
+          Whether it's an urgent blood requirement, a lost pet, a trusted plumber, or an
+          emergency, your mohalla has the answer. We just make it easy to reach.
+        </p>
+      </div>
+      <ul class="about-highlight">
+        <h3>Why neighbours trust us</h3>
+        <li><span>💚</span> Built for India, not adapted from abroad</li>
+        <li><span>🤝</span> Hyperlocal — help from your own area</li>
+        <li><span>⚡</span> WhatsApp-first — no app download needed</li>
+        <li><span>🔒</span> Verified people, not anonymous strangers</li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- ===== Features ===== -->
+  <section class="section section-tint" id="features">
+    <div class="section-head">
+      <span class="section-kicker">✨ What we do</span>
+      <h2>Everything your mohalla needs</h2>
+    </div>
+    <div class="services-grid">
+      <div class="service-card">
+        <div class="service-icon">🩸</div>
+        <h4>Blood Donor Finder</h4>
+        <p>Find verified donors by blood group and city in minutes — because every second counts.</p>
+      </div>
+      <div class="service-card">
+        <div class="service-icon">🔍</div>
+        <h4>Lost &amp; Found</h4>
+        <p>Post a lost pet or item and let the whole neighbourhood help you bring it home.</p>
+      </div>
+      <div class="service-card">
+        <div class="service-icon">🧑‍🔧</div>
+        <h4>Local Services</h4>
+        <p>Plumbers, electricians, tutors, house help — verified and trusted by your neighbours.</p>
+      </div>
+      <div class="service-card">
+        <div class="service-icon">🚨</div>
+        <h4>Emergency SOS</h4>
+        <p>Every national helpline, one tap away — share it with your family to keep them safe.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== How it works ===== -->
+  <section class="section" id="how">
+    <div class="section-head">
+      <span class="section-kicker">⚙️ Simple by design</span>
+      <h2>How it works</h2>
+    </div>
+    <div class="steps">
+      <div class="step">
+        <div class="step-num">1</div>
+        <h4>Ask or offer</h4>
+        <p>Post what you need — or what you can give — in your mohalla.</p>
+      </div>
+      <div class="step">
+        <div class="step-num">2</div>
+        <h4>Connect on WhatsApp</h4>
+        <p>Chat directly with the right neighbour, no middleman, no delay.</p>
+      </div>
+      <div class="step">
+        <div class="step-num">3</div>
+        <h4>Help &amp; grow</h4>
+        <p>Every solved problem makes the whole mohalla stronger.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== CTA / Contact ===== -->
+  <section class="section" id="contact">
+    <div class="cta-banner">
+      <h2>Ready to help your mohalla?</h2>
+      <p>Create a free account and start making a difference today.</p>
+      <a href="loader.html" class="btn">🚀 Get Started</a>
+    </div>
+  </section>
+
+  <!-- ===== Footer ===== -->
+  <footer class="footer">
+    <div class="brand brand-light">
+      <span class="brand-mark">🏘️</span>
+      <span class="brand-text">Apna<span>Mohalla</span></span>
+    </div>
+    <p>Made with ❤️ in India · Helping neighbours, saving lives.</p>
+    <p class="footer-small">© <span id="year"></span> ApnaMohalla · Landing v1.0</p>
+  </footer>
+
+  <script src="js/i18n.js"></script>
+  <script src="js/fab.js"></script>
+  <script src="js/app.js"></script>
+</body>
+</html>

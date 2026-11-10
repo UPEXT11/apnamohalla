@@ -1,0 +1,170 @@
+/* ApnaMohalla — lightweight English/Hindi i18n */
+(function () {
+  'use strict';
+
+  const STORE_KEY = 'apnamohalla.lang';
+
+  const I18N = {
+    en: {
+      'nav.home': 'Home', 'nav.about': 'About', 'nav.features': 'Features',
+      'nav.how': 'How it works', 'nav.contact': 'Contact',
+      'nav.blood': 'Blood Donors', 'nav.profile': 'Profile',
+      'nav.signin': 'Sign In', 'nav.signup': 'Sign Up', 'nav.logout': 'Logout',
+      'nav.getstarted': 'Get Started', 'common.learnmore': 'Learn More',
+      'common.back': 'Back to home',
+
+      'fab.legal': 'Legal & Info',
+      'fab.privacy': 'Privacy Policy', 'fab.terms': 'Terms of Service',
+      'fab.cookies': 'Cookie Policy', 'fab.disclaimer': 'Disclaimer',
+      'fab.refund': 'Refund Policy', 'fab.about': 'About Us',
+
+      'dash.pick': 'What can your mohalla help with today?',
+      'dash.tools': 'Your tools', 'dash.pickService': 'Pick a service',
+      'dash.gateSignin': 'Sign in to unlock everything.',
+      'dash.unlocked': 'Everything is unlocked. Choose a tool to get started.',
+      'dash.signupFree': 'Sign Up Free', 'dash.login': 'Log In',
+      'dash.ctaTitle': 'One step to help your mohalla.',
+      'dash.ctaSub': 'Create a free account to access blood donors, lost & found, and more.',
+      'dash.blood': 'Blood Donor Finder', 'dash.bloodDesc': 'Find verified donors by blood group and city.',
+      'dash.lost': 'Lost & Found', 'dash.lostDesc': 'Post a lost pet or item and let the neighbourhood help.',
+      'dash.services': 'Local Services', 'dash.servicesDesc': 'Plumbers, electricians, tutors, house help and more.',
+      'dash.sos': 'Emergency SOS', 'dash.sosDesc': 'Every national helpline, one tap away.',
+      'dash.open': 'Open', 'dash.signinToAccess': 'Sign in to access',
+
+      'blood.title': 'Blood Donor Finder',
+      'blood.sub': 'Search verified donors by blood group and city. One match can save a life.',
+      'blood.bloodGroup': 'Blood group', 'blood.city': 'City',
+      'blood.search': 'Search Donors',
+      'blood.registerTitle': 'Become a donor',
+      'blood.registerSub': 'Register yourself so you can help save a life.',
+      'blood.name': 'Full name', 'blood.phone': 'WhatsApp number',
+      'blood.register': 'Register as Donor',
+      'blood.noResults': 'No donors found for this search. Be the first to register!',
+      'blood.found': 'donors found', 'blood.contact': 'Contact',
+      'blood.registered': 'You are now a registered donor. Thank you!',
+      'blood.any': 'Any blood group',
+
+      'profile.title': 'Your Profile',
+      'profile.sub': 'Update your info and add anything about yourself.',
+      'profile.personal': 'Personal details',
+      'profile.phone': 'Phone', 'profile.city': 'City',
+      'profile.blood': 'Your blood group', 'profile.bio': 'About you (bio)',
+      'profile.sectionsTitle': 'Your sections',
+      'profile.sectionsSub': 'Add any sections you like — skills, certificates, interests…',
+      'profile.addSection': 'Add Section',
+      'profile.sectionTitle': 'Section title', 'profile.sectionContent': 'Section content',
+      'profile.save': 'Save Profile', 'profile.saved': 'Profile saved!',
+      'profile.remove': 'Remove',
+
+      'auth.welcome': 'Welcome back!', 'auth.loginSub': 'Log in to help your mohalla.',
+      'auth.createTitle': 'Create your account',
+      'auth.createSub': 'Join your mohalla in seconds — it\'s free.',
+      'auth.email': 'Email address', 'auth.password': 'Password', 'auth.name': 'Full name',
+      'auth.login': 'Log In', 'auth.signup': 'Sign Up Free',
+      'auth.noAccount': 'Don\'t have an account?', 'auth.haveAccount': 'Already have an account?',
+      'auth.signupLink': 'Sign up free', 'auth.loginLink': 'Log in',
+
+      'hero.title': 'Help starts right in your <em>mohalla</em>.',
+      'hero.sub': 'ApnaMohalla is India\'s hyperlocal help platform — find blood donors, reunite lost items, discover trusted local services and reach emergency help.',
+      'hero.badge': 'Made for India',
+    },
+
+    hi: {
+      'nav.home': 'होम', 'nav.about': 'हमारे बारे में', 'nav.features': 'सुविधाएँ',
+      'nav.how': 'कैसे काम करता है', 'nav.contact': 'संपर्क',
+      'nav.blood': 'रक्तदाता', 'nav.profile': 'प्रोफ़ाइल',
+      'nav.signin': 'साइन इन', 'nav.signup': 'साइन अप', 'nav.logout': 'लॉग आउट',
+      'nav.getstarted': 'शुरू करें', 'common.learnmore': 'और जानें',
+      'common.back': 'होम पर वापस',
+
+      'fab.legal': 'कानूनी और जानकारी',
+      'fab.privacy': 'गोपनीयता नीति', 'fab.terms': 'सेवा की शर्तें',
+      'fab.cookies': 'कुकी नीति', 'fab.disclaimer': 'अस्वीकरण',
+      'fab.refund': 'धनवापसी नीति', 'fab.about': 'हमारे बारे में',
+
+      'dash.pick': 'आज आपका मोहल्ला क्या मदद कर सकता है?',
+      'dash.tools': 'आपके उपकरण', 'dash.pickService': 'एक सेवा चुनें',
+      'dash.gateSignin': 'सब कुछ अनलॉक करने के लिए साइन इन करें।',
+      'dash.unlocked': 'सब कुछ अनलॉक है। शुरू करने के लिए एक उपकरण चुनें।',
+      'dash.signupFree': 'मुफ्त साइन अप', 'dash.login': 'लॉग इन',
+      'dash.ctaTitle': 'अपने मोहल्ले की मदद के लिए एक कदम।',
+      'dash.ctaSub': 'रक्तदाता, खोया-पाया और बहुत कुछ एक्सेस करने के लिए मुफ्त खाता बनाएं।',
+      'dash.blood': 'रक्तदाता खोज', 'dash.bloodDesc': 'रक्त समूह और शहर के अनुसार सत्यापित रक्तदाता खोजें।',
+      'dash.lost': 'खोया-पाया', 'dash.lostDesc': 'खोया हुआ पालतू या सामान पोस्ट करें और मोहल्ले से मदद लें।',
+      'dash.services': 'स्थानीय सेवाएँ', 'dash.servicesDesc': 'प्लंबर, इलेक्ट्रीशियन, ट्यूटर, घरेलू मदद और बहुत कुछ।',
+      'dash.sos': 'आपातकालीन एसओएस', 'dash.sosDesc': 'हर राष्ट्रीय हेल्पलाइन, एक टैप दूर।',
+      'dash.open': 'खोलें', 'dash.signinToAccess': 'एक्सेस के लिए साइन इन करें',
+
+      'blood.title': 'रक्तदाता खोज',
+      'blood.sub': 'रक्त समूह और शहर के अनुसार सत्यापित रक्तदाता खोजें। एक मिलान जीवन बचा सकता है।',
+      'blood.bloodGroup': 'रक्त समूह', 'blood.city': 'शहर',
+      'blood.search': 'रक्तदाता खोजें',
+      'blood.registerTitle': 'रक्तदाता बनें',
+      'blood.registerSub': 'खुद को पंजीकृत करें ताकि आप जीवन बचाने में मदद कर सकें।',
+      'blood.name': 'पूरा नाम', 'blood.phone': 'व्हाट्सएप नंबर',
+      'blood.register': 'रक्तदाता के रूप में पंजीकरण करें',
+      'blood.noResults': 'इस खोज के लिए कोई रक्तदाता नहीं मिला। सबसे पहले पंजीकरण करें!',
+      'blood.found': 'रक्तदाता मिले', 'blood.contact': 'संपर्क करें',
+      'blood.registered': 'आप अब पंजीकृत रक्तदाता हैं। धन्यवाद!',
+      'blood.any': 'कोई भी रक्त समूह',
+
+      'profile.title': 'आपकी प्रोफ़ाइल',
+      'profile.sub': 'अपनी जानकारी अपडेट करें और अपने बारे में कुछ भी जोड़ें।',
+      'profile.personal': 'व्यक्तिगत जानकारी',
+      'profile.phone': 'फ़ोन', 'profile.city': 'शहर',
+      'profile.blood': 'आपका रक्त समूह', 'profile.bio': 'आपके बारे में',
+      'profile.sectionsTitle': 'आपके अनुभाग',
+      'profile.sectionsSub': 'अपने मनचाहे अनुभाग जोड़ें — कौशल, प्रमाणपत्र, रुचियाँ…',
+      'profile.addSection': 'अनुभाग जोड़ें',
+      'profile.sectionTitle': 'अनुभाग का शीर्षक', 'profile.sectionContent': 'अनुभाग की सामग्री',
+      'profile.save': 'प्रोफ़ाइल सहेजें', 'profile.saved': 'प्रोफ़ाइल सहेजी गई!',
+      'profile.remove': 'हटाएँ',
+
+      'auth.welcome': 'वापसी पर स्वागत है!', 'auth.loginSub': 'अपने मोहल्ले की मदद के लिए लॉग इन करें।',
+      'auth.createTitle': 'अपना खाता बनाएं',
+      'auth.createSub': 'कुछ ही सेकंड में अपने मोहल्ले से जुड़ें — यह मुफ्त है।',
+      'auth.email': 'ईमेल पता', 'auth.password': 'पासवर्ड', 'auth.name': 'पूरा नाम',
+      'auth.login': 'लॉग इन', 'auth.signup': 'मुफ्त साइन अप',
+      'auth.noAccount': 'खाता नहीं है?', 'auth.haveAccount': 'पहले से खाता है?',
+      'auth.signupLink': 'मुफ्त साइन अप करें', 'auth.loginLink': 'लॉग इन',
+
+      'hero.title': 'मदद अब आपके <em>मोहल्ले</em> से शुरू होती है।',
+      'hero.sub': 'ApnaMohalla भारत का हाइपरलोकल मदद मंच है — रक्तदाता खोजें, खोया सामान पाएं, भरोसेमंद स्थानीय सेवाएँ और आपातकालीन सहायता पाएं।',
+      'hero.badge': 'भारत के लिए बना',
+    },
+  };
+
+  function getLang() {
+    const saved = localStorage.getItem(STORE_KEY);
+    return saved === 'hi' || saved === 'en' ? saved : 'en';
+  }
+
+  function t(key) {
+    return (I18N[getLang()] && I18N[getLang()][key]) || I18N.en[key] || key;
+  }
+
+  function apply() {
+    const lang = getLang();
+    document.documentElement.lang = lang;
+    document.querySelectorAll('[data-i18n]').forEach((el) => {
+      el.textContent = t(el.getAttribute('data-i18n'));
+    });
+    document.querySelectorAll('[data-i18n-html]').forEach((el) => {
+      el.innerHTML = t(el.getAttribute('data-i18n-html'));
+    });
+    document.querySelectorAll('[data-i18n-placeholder]').forEach((el) => {
+      el.placeholder = t(el.getAttribute('data-i18n-placeholder'));
+    });
+    document.dispatchEvent(new CustomEvent('langchange', { detail: { lang } }));
+  }
+
+  function setLang(lang) {
+    if (lang !== 'en' && lang !== 'hi') return;
+    localStorage.setItem(STORE_KEY, lang);
+    apply();
+  }
+
+  window.i18n = { getLang, setLang, t, apply };
+
+  document.addEventListener('DOMContentLoaded', apply);
+})();

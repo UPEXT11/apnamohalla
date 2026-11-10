@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Sign Up — ApnaMohalla</title>
+  <meta name="description" content="Create a free ApnaMohalla account and start helping your neighbourhood." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="css/styles.css" />
+</head>
+<body>
+  <div class="auth-wrap">
+    <div class="auth-card">
+      <a href="index.html" class="auth-back" data-i18n="common.back">← Back to home</a>
+      <div class="auth-head">
+        <div class="auth-icon">🎉</div>
+        <h2 data-i18n="auth.createTitle">Create your account</h2>
+        <p data-i18n="auth.createSub">Join your mohalla in seconds — it's free.</p>
+      </div>
+      <form class="auth-form" id="signupForm">
+        <input type="text" name="name" data-i18n-placeholder="auth.name" placeholder="Full name" required />
+        <input type="email" name="email" data-i18n-placeholder="auth.email" placeholder="Email address" required />
+        <input type="password" name="password" data-i18n-placeholder="auth.password" placeholder="Password (min 4 chars)" required />
+        <button type="submit" class="btn btn-primary" data-i18n="auth.signup">Sign Up Free</button>
+      </form>
+      <p class="auth-switch"><span data-i18n="auth.haveAccount">Already have an account?</span> <a href="login.html" data-i18n="auth.loginLink">Log in</a></p>
+    </div>
+  </div>
+  <script src="js/i18n.js"></script>
+  <script src="js/fab.js"></script>
+  <script src="js/auth.js"></script>
+  <script src="js/auth-pages.js"></script>
+</body>
+</html>
