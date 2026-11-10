@@ -5,8 +5,8 @@
   const features = [
     { icon: '🩸', titleKey: 'dash.blood', descKey: 'dash.bloodDesc', href: 'blood.html' },
     { icon: '🔍', titleKey: 'dash.lost', descKey: 'dash.lostDesc', href: 'lost.html' },
-    { icon: '🧑‍🔧', titleKey: 'dash.services', descKey: 'dash.servicesDesc', href: null },
-    { icon: '🚨', titleKey: 'dash.sos', descKey: 'dash.sosDesc', href: null },
+    { icon: '🧑‍🔧', titleKey: 'dash.services', descKey: 'dash.servicesDesc', href: 'services.html' },
+    { icon: '🚨', titleKey: 'dash.sos', descKey: 'dash.sosDesc', href: 'sos.html' },
   ];
 
   const loggedIn = window.ApnaAuth.isLoggedIn();
