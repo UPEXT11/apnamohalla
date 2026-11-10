@@ -77,6 +77,7 @@ def init_db():
             user_id INTEGER,
             category TEXT NOT NULL,
             title TEXT NOT NULL,
+            type TEXT,
             description TEXT,
             city TEXT,
             phone TEXT,
@@ -103,11 +104,14 @@ def init_db():
         );
         """
     )
-    # Migrate an existing users table that lacks the profile columns.
+    # Migrate existing tables that lack newer columns.
     cols = {r[1] for r in conn.execute('PRAGMA table_info(users)')}
     for name, typ in [('phone', 'TEXT'), ('city', 'TEXT'), ('bio', 'TEXT'), ('blood_group', 'TEXT')]:
         if name not in cols:
             conn.execute(f'ALTER TABLE users ADD COLUMN {name} {typ}')
+    pcols = {r[1] for r in conn.execute('PRAGMA table_info(posts)')}
+    if 'type' not in pcols:
+        conn.execute('ALTER TABLE posts ADD COLUMN type TEXT')
     conn.commit()
     conn.close()
 
@@ -341,13 +345,20 @@ class Handler(BaseHTTPRequestHandler):
     def _create_post(self, body):
         category = (body.get('category') or '').strip()
         title = (body.get('title') or '').strip()
+        ptype = (body.get('type') or '').strip()
         if not category or not title:
             return self._send_json({'error': 'Category and title are required'}, 400)
         conn = get_db()
+        user_id = None
+        email = (body.get('email') or '').strip().lower()
+        if email:
+            u = conn.execute('SELECT id FROM users WHERE email = ?', (email,)).fetchone()
+            if u:
+                user_id = u['id']
         cur = conn.execute(
-            'INSERT INTO posts (user_id, category, title, description, city, phone) '
-            'VALUES (?, ?, ?, ?, ?, ?)',
-            (body.get('user_id'), category, title,
+            'INSERT INTO posts (user_id, category, title, type, description, city, phone) '
+            'VALUES (?, ?, ?, ?, ?, ?, ?)',
+            (user_id, category, title, ptype,
              body.get('description'), body.get('city'), body.get('phone')),
         )
         conn.commit()

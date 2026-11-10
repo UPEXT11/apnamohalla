@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Lost &amp; Found — ApnaMohalla</title>
+  <meta name="description" content="Post a lost pet or item on ApnaMohalla and let your neighbourhood help." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="css/styles.css" />
+</head>
+<body>
+  <div class="topbar"><span>🇮🇳 Made in India · For every mohalla, for every neighbour</span></div>
+
+  <header class="navbar">
+    <a href="dashboard.html" class="brand">
+      <span class="brand-mark">🏘️</span>
+      <span class="brand-text">Apna<span>Mohalla</span></span>
+    </a>
+    <div class="nav-actions">
+      <a href="profile.html" class="btn btn-ghost btn-sm" data-i18n="nav.profile">Profile</a>
+      <span class="user-chip" id="userChip" hidden></span>
+      <button class="btn btn-ghost btn-sm" id="logoutBtn" hidden data-i18n="nav.logout">Logout</button>
+    </div>
+  </header>
+
+  <section class="section">
+    <div class="section-head">
+      <span class="section-kicker">🔍</span>
+      <h2 data-i18n="lost.title">Lost &amp; Found</h2>
+      <p data-i18n="lost.sub">Post a lost pet or item, or help someone find what they lost.</p>
+    </div>
+
+    <div class="panel">
+      <div class="finder-bar">
+        <select id="filterCat">
+          <option value="" data-i18n="lost.all">All categories</option>
+          <option value="pet">🐾 Pet</option>
+          <option value="documents">📄 Documents</option>
+          <option value="phone">📱 Phone</option>
+          <option value="other">📦 Other</option>
+        </select>
+        <select id="filterType">
+          <option value="" data-i18n="lost.all">All types</option>
+          <option value="lost" data-i18n="lost.lost">Lost</option>
+          <option value="found" data-i18n="lost.found">Found</option>
+        </select>
+      </div>
+      <div class="results-grid" id="lostResults"></div>
+      <div class="empty-state" id="lostEmpty" hidden data-i18n="lost.noPosts">No posts yet in this filter.</div>
+    </div>
+
+    <div class="panel panel-alt">
+      <h3 data-i18n="lost.postTitle">Post a lost / found item</h3>
+      <form class="form-grid" id="lostForm">
+        <input name="title" data-i18n-placeholder="lost.what" placeholder="What is lost or found?" required />
+        <select name="category" required>
+          <option value="">— Category —</option>
+          <option value="pet">🐾 Pet</option>
+          <option value="documents">📄 Documents</option>
+          <option value="phone">📱 Phone</option>
+          <option value="other">📦 Other</option>
+        </select>
+        <select name="type" required>
+          <option value="">— Type —</option>
+          <option value="lost" data-i18n="lost.lost">Lost</option>
+          <option value="found" data-i18n="lost.found">Found</option>
+        </select>
+        <input name="city" data-i18n-placeholder="lost.city" placeholder="City / area" required />
+        <input name="phone" type="tel" data-i18n-placeholder="lost.phone" placeholder="WhatsApp number" required />
+        <textarea name="description" data-i18n-placeholder="lost.desc" placeholder="Short description" required></textarea>
+        <button type="submit" class="btn btn-primary" data-i18n="lost.post">Post to Mohalla</button>
+      </form>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <div class="brand brand-light">
+      <span class="brand-mark">🏘️</span>
+      <span class="brand-text">Apna<span>Mohalla</span></span>
+    </div>
+    <p>Made with ❤️ in India · Helping neighbours, saving lives.</p>
+    <p class="footer-small">© <span id="year"></span> ApnaMohalla</p>
+  </footer>
+
+  <script src="js/i18n.js"></script>
+  <script src="js/fab.js"></script>
+  <script src="js/auth.js"></script>
+  <script src="js/lost.js"></script>
+</body>
+</html>
